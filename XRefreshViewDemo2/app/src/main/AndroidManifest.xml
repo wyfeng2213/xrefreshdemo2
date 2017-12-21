@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.administrator.xrefreshviewdemo">
+
+    <uses-sdk tools:overrideLibrary="com.wyt.searchbox,ezy.library.badgebutton" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".refresh.RefreshActivity" />
+        <activity android:name=".photo.PhotoActivity" />
+        <activity android:name=".photo.PhotoActivity2" />
+        <activity android:name=".photo.ResultActivity" />
+        <activity android:name=".calendar.CanendarActivity" />
+        <activity android:name=".zbar.ZbarActivity" />
+        <activity android:name=".switchbutton.SwitchButtonActivity" />
+        <activity android:name=".tab.ScrollTabActivity" />
+        <activity android:name=".tab.MoreTab2Activity" />
+        <activity android:name=".zxing.ZxingActivity" />
+        <activity android:name=".zxing.ZXingCreatePicActivity" />
+        <activity android:name=".tab.GuideActivity" />
+        <activity android:name=".tab.GuideActivity2" />
+        <!-- <activity android:name=".UI.RadioButtonActivity"></activity> -->
+        <activity android:name=".wheelview.WheelActivity" />
+        <activity android:name=".chart.ChartActivity" />
+        <activity android:name=".toolbar.ToolBarTestActivty" />
+        <activity android:name=".toolbar.ToolBarTestActivty2" />
+        <activity android:name=".expandablelist.normallistview.ExpandableListViewTestActivity" />
+        <activity android:name=".expandablelist.animalistview.AnimatedListViewTestActivity" />
+        <activity android:name=".listviewletter.ListviewLetterActivity" />
+        <activity android:name=".headlistview.HeadListViewActivity" />
+        <activity android:name=".listviewdelete.ListViewDelDemoActivity" />
+        <activity android:name=".mvp.mvp.ui.MvpActivity" />
+        <activity android:name=".ormlite.OrmLiteActivity" />
+        <activity android:name=".mpAndroidChart.LineChatActivity" />
+        <activity android:name=".loading.LoadingActivity" />
+        <activity android:name=".supertext.SuperTextViewActivity" />
+        <activity android:name=".iosdialog.IosDialogActivity" />
+        <activity android:name=".shape.ShapeActivity" />
+        <activity android:name=".permission.PermissionTestActivity" />
+        <activity android:name=".searchview.SearchActivity" />
+        <activity android:name=".supertext.SuperViewActivity" />
+        <activity android:name=".supertext.SuperTextShapeActivity" />
+        <activity android:name=".supertext.StateButtonActivity" />
+        <activity android:name=".supertext.BadgebuttonActivity" />
+        <activity android:name=".androidview.AndroidViewActivity" />
+        <activity android:name=".MyEdtitext.MyEditextActivity" />
+        <activity android:name=".databinding.DataBindingActivity" />
+        <activity android:name=".text.TextActivity" />
+        <activity android:name=".supertext.BadgeViewActivity" />
+        <activity android:name=".chenjin.ChenjinActivity" />
+        <activity android:name=".tab.ViewPageScrollActivity"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,103 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+    defaultConfig {
+        applicationId "com.example.administrator.xrefreshviewdemo"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    dataBinding {
+        enabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    repositories {
+        maven {
+            url "https://jitpack.io"
+        }
+    }
+
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+//    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+//        exclude group: 'com.android.support', module: 'support-annotations'
+//    })
+    testCompile 'junit:junit:4.12'
+    compile files('libs/ormlite-android-5.0.jar')
+    compile 'com.daimajia.numberprogressbar:library:1.2@aar'
+    compile 'com.jude:easyrecyclerview:4.2.6'
+    compile 'com.github.bumptech.glide:glide:3.6.1'
+    //照片库
+    compile 'com.jph.takephoto:takephoto_library:4.0.3'
+    // 日历控件
+    compile 'cn.carbs.android:IndicatorView:1.0.2'
+    //zar扫描
+    compile 'cn.bingoogolapple:bga-qrcodecore:1.1.7@aar'
+    compile 'cn.bingoogolapple:bga-zbar:1.1.7@aar'
+    compile 'cn.bingoogolapple:bga-photopicker:1.2.3@aar'
+    compile 'cn.bingoogolapple:bga-adapter:1.1.8@aar'
+    //zxing 扫描
+    compile 'com.google.zxing:core:3.2.1'
+    compile 'cn.bingoogolapple:bga-zxing:1.1.7@aar'
+    // 开关按钮
+    compile 'me.xiaopan:switchbutton:1.2.0'
+    compile 'com.kyleduo.switchbutton:library:1.4.6'
+    //viewpage滑动控件
+    compile 'com.shizhefei:ViewPagerIndicator:1.1.5'
+    //仿iOS的AlertViewController
+    compile 'com.bigkoo:alertview:1.0.3'
+    //图片放大
+
+    //    compile 'com.github.githubwing:DragPhotoView:1.0.1'
+    compile 'com.bm.photoview:library:1.4.1'
+    compile 'cn.qqtheme.framework:WheelPicker:1.4.5'
+    //图表
+    compile 'com.github.lecho:hellocharts-android:v1.5.8'
+    // 侧边栏字母需要的
+    compile 'org.kymjs.kjframe:kjframe:2.4.6.2'
+    //侧滑删除
+    compile 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.2.5'
+    compile 'com.github.mcxtzhang:all-base-adapter:V1.5.2'
+    // mpAndroidChart
+    compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
+    //superTextView 多行布局
+    compile 'com.github.lygttpod:SuperTextView:2.0.3'
+    // superTextView shape
+    compile 'com.github.chenBingX:SuperTextView:v1.3'
+    // 红色小圆点
+    compile 'com.github.czy1121:badgebutton:1.1.0'
+    // Common Adapter的依赖
+    compile 'org.simple:adapter:1.0.1'
+    //仿ios pickerView
+    compile 'com.contrarywind:Android-PickerView:3.2.5'
+    //searchView
+    compile 'com.wenwenwen888:searchbox:1.0.0'
+    //小红点
+    compile 'com.itingchunyu.badgeview:badgeview:1.0.5'
+    compile project(':refreshlibrary')
+    compile project(':calendarlibrary')
+    compile project(':healthlibrary')
+    compile project(':rxretrofitlibrary')
+    compile 'com.orhanobut:logger:1.15'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile files('libs/ormlite-core-5.0.jar')
+    compile project(':IosDialog')
+    compile project(':StateButton')
+}

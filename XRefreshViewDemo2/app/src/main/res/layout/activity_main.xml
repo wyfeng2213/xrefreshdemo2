@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/activity_take_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/bt_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:text="下拉刷新" />
+
+        <Button
+            android:id="@+id/bt_photo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:text="拍照和选择相册" />
+
+        <Button
+            android:id="@+id/bt_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:padding="10dp"
+            android:text="日历选择" />
+
+        <Button
+            android:id="@+id/bt_zbar_qrcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="zbar二维码扫描" />
+
+        <Button
+            android:id="@+id/bt_zxing_qrcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="zxing二维码扫描" />
+
+        <Button
+            android:id="@+id/bt_zxing_create"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="zxing二维码生成" />
+
+        <Button
+            android:id="@+id/bt_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="开关按钮" />
+
+        <Button
+            android:id="@+id/bt_tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="可滑动tab界面" />
+
+        <Button
+            android:id="@+id/bt_tab2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="可滑动tab界面带下划线" />
+
+        <Button
+            android:id="@+id/bt_viewpage_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="viewpage滑动演示" />
+
+        <Button
+            android:id="@+id/bt_tab3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="可滑动tab带白色小点" />
+
+        <Button
+            android:id="@+id/bt_wheel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="wheel滑动" />
+
+        <Button
+            android:id="@+id/bt_chat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="图表展示" />
+
+        <Button
+            android:id="@+id/bt_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="toolbar使用" />
+
+        <Button
+            android:id="@+id/bt_head_suspension"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="listview 头部悬浮" />
+
+        <Button
+            android:id="@+id/bt_expandable_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="可折叠的ExpandableListView使用" />
+
+        <Button
+            android:id="@+id/bt_letter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="侧边字母栏使用" />
+
+        <Button
+            android:id="@+id/bt_listviewdel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="listivew侧滑删除" />
+
+        <Button
+            android:id="@+id/bt_mvp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="mvp_retrofit+rxjava使用" />
+
+        <Button
+            android:id="@+id/bt_ormlite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="ormlite本地数据库使用" />
+
+        <Button
+            android:id="@+id/bt_mpAndroidChart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="MPAndroidChart的使用" />
+
+        <Button
+            android:id="@+id/bt_loading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="loading的使用" />
+
+        <Button
+            android:id="@+id/bt_super_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="superView的使用" />
+
+        <Button
+            android:id="@+id/bt_iosDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="仿iosDialog的使用" />
+
+        <Button
+            android:id="@+id/bt_shape"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="shape动态设置" />
+
+        <Button
+            android:id="@+id/bt_permission"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="动态权限设置" />
+
+        <Button
+            android:id="@+id/bt_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="searchView的使用" />
+
+        <Button
+            android:id="@+id/bt_androidview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="androidView的使用" />
+
+        <Button
+            android:id="@+id/bt_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="计数edt的使用" />
+
+        <Button
+            android:id="@+id/bt_databinding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="databinding使用" />
+
+        <Button
+            android:id="@+id/bt_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:text="text使用集合" />
+
+        <Button
+            android:id="@+id/bt_chenjin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:text="沉浸通知栏" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/IosDialog/IosDialog.iml" filepath="$PROJECT_DIR$/IosDialog/IosDialog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/StateButton/StateButton.iml" filepath="$PROJECT_DIR$/StateButton/StateButton.iml" />
+      <module fileurl="file://$PROJECT_DIR$/XRefreshViewDemo2.iml" filepath="$PROJECT_DIR$/XRefreshViewDemo2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/browse/browse.iml" filepath="$PROJECT_DIR$/browse/browse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/calendarlibrary/calendarlibrary.iml" filepath="$PROJECT_DIR$/calendarlibrary/calendarlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/healthlibrary/healthlibrary.iml" filepath="$PROJECT_DIR$/healthlibrary/healthlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/refreshlibrary/refreshlibrary.iml" filepath="$PROJECT_DIR$/refreshlibrary/refreshlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rxretrofitlibrary/rxretrofitlibrary.iml" filepath="$PROJECT_DIR$/rxretrofitlibrary/rxretrofitlibrary.iml" />
+    </modules>
+  </component>
+</project>

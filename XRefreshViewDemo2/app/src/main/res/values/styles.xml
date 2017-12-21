@@ -1,0 +1,108 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat">-->
+    <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+    <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+    <!--<item name="colorAccent">@color/colorAccent</item>-->
+    <!--</style>-->
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <!--导航栏底色-->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <!--状态栏底色-->
+        <!--<item name="colorPrimaryDark">@android:color/transparent</item>-->
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <!--导航栏上的标题颜色-->
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <!--Activity窗口的颜色-->
+        <item name="android:windowBackground">@color/white</item>
+        <!--按钮选中或者点击获得焦点后的颜色-->
+        <item name="colorAccent">@color/colorAccent</item>
+        <!--和 colorAccent相反，正常状态下按钮的颜色-->
+        <item name="colorControlNormal">#ff0000</item>
+        <!--&lt;!&ndash;Button按钮正常状态颜色&ndash;&gt;-->
+        <!--<item name="colorButtonNormal">@color/colorPrimary</item>-->
+        <!--EditText 输入框中字体的颜色-->
+        <item name="editTextColor">@android:color/white</item>
+
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textAllCaps">false</item>
+
+    </style>
+
+
+    <style name="dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowBackground">@color/colorTransparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowActionModeOverlay">true</item>
+    </style>
+
+
+    <!-- 适用于开启滑动返回功能的Activity -->
+    <style name="AppTheme.Transparent">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <!-- 适用于欢迎界面避免第一次进来白屏或黑屏 -->
+    <style name="AppTheme.Transparent.Splash">
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+
+    <style name="MatchWrapTv" parent="MatchWrap">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/selector_btn_orange</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:onClick">onClick</item>
+        <item name="android:padding">8dp</item>
+    </style>
+
+    <style name="AutoWrapTv" parent="AutoWrap">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/selector_btn_orange</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:onClick">onClick</item>
+        <item name="android:paddingLeft">4dp</item>
+        <item name="android:paddingRight">4dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+    </style>
+
+    <style name="SwitchButtonStyle">
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <style name="BadgeButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#cc333333</item>
+        <item name="btnBadgeHeight">14dp</item>
+        <item name="btnBadgeColor">@color/colorAccent</item>
+    </style>
+
+    <style name="BadgeButton.Normal">
+        <item name="android:clickable">true</item>
+        <item name="android:background">@drawable/badge</item>
+        <item name="btnBadgeVisible">true</item>
+    </style>
+
+</resources>
