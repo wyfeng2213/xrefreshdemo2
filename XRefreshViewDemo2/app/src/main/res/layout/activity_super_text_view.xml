@@ -203,7 +203,26 @@
                 stv:sRightTopTextString="李四"
                 stv:sRightViewGravity="right_center" />
 
+            <LinearLayout
+                android:id="@+id/layout_superbutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <com.allen.library.SuperButton
+                    android:id="@+id/superbutton"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:layout_margin="5dp"
+                    android:text="圆形"
+                    stv:sCornersRadius="5dp"
+                    stv:sSelectorNormalColor="@color/colorAccent"
+                    stv:sSelectorPressedColor="@color/colorAccent"
+                    stv:sUseSelector="true"/>
+
+            </LinearLayout>
         </LinearLayout>
+
+
     </ScrollView>
 
 </LinearLayout>
