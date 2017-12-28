@@ -109,10 +109,10 @@ public class ViewPageScrollActivity extends AppCompatActivity {
         context.startActivity(starter);
     }
 
-    @Override
-    public void onBackPressed() {
-        EventBus.getDefault().post("act");
-    }
+//    @Override
+//    public void onBackPressed() {
+//        EventBus.getDefault().post("act");
+//    }
 
     @Override
     protected void onDestroy() {
