@@ -91,6 +91,7 @@ dependencies {
     compile 'com.wenwenwen888:searchbox:1.0.0'
     //小红点
     compile 'com.itingchunyu.badgeview:badgeview:1.0.5'
+    compile 'org.greenrobot:eventbus:3.1.1'
     compile project(':refreshlibrary')
     compile project(':calendarlibrary')
     compile project(':healthlibrary')

@@ -12,11 +12,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.cmcc.healthlibrary.utils.ToastUtil;
 import com.example.administrator.xrefreshviewdemo.R;
 import com.shizhefei.view.indicator.FixedIndicatorView;
 import com.shizhefei.view.indicator.IndicatorViewPager;
 import com.shizhefei.view.indicator.transition.OnTransitionTextListener;
 import com.shizhefei.view.viewpager.SViewPager;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 public class ViewPageScrollActivity extends AppCompatActivity {
     private IndicatorViewPager indicatorViewPager;
@@ -38,6 +43,15 @@ public class ViewPageScrollActivity extends AppCompatActivity {
         viewPager.setCanScroll(false);
         // 设置viewpager保留界面不重新加载的页面数量
         viewPager.setOffscreenPageLimit(4);
+
+        EventBus.getDefault().register(this);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onUserEvent(String event) {
+        if ("fragment".equals(event)) {
+            ToastUtil.show(this, "收到Fragment消息");
+        }
     }
 
     private class MyAdapter extends IndicatorViewPager.IndicatorFragmentPagerAdapter {
@@ -72,11 +86,20 @@ public class ViewPageScrollActivity extends AppCompatActivity {
 
         @Override
         public Fragment getFragmentForPage(int position) {
-            FirstLayerFragment mainFragment = new FirstLayerFragment();
-            Bundle bundle = new Bundle();
-            bundle.putString(FirstLayerFragment.INTENT_STRING_TABNAME, tabNames[position]);
-            bundle.putInt(FirstLayerFragment.INTENT_INT_INDEX, position);
-            mainFragment.setArguments(bundle);
+            Fragment mainFragment = null;
+            if (position == 0) {
+                mainFragment = new FirstLayerFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString(FirstLayerFragment.INTENT_STRING_TABNAME, tabNames[position]);
+                bundle.putInt(FirstLayerFragment.INTENT_INT_INDEX, position);
+                mainFragment.setArguments(bundle);
+            } else {
+                mainFragment = new SecondLayerFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString(FirstLayerFragment.INTENT_STRING_TABNAME, tabNames[position]);
+                bundle.putInt(FirstLayerFragment.INTENT_INT_INDEX, position);
+                mainFragment.setArguments(bundle);
+            }
             return mainFragment;
         }
     }
@@ -84,5 +107,16 @@ public class ViewPageScrollActivity extends AppCompatActivity {
     public static void startActivity(Context context) {
         Intent starter = new Intent(context, ViewPageScrollActivity.class);
         context.startActivity(starter);
+    }
+
+    @Override
+    public void onBackPressed() {
+        EventBus.getDefault().post("act");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 }
