@@ -73,7 +73,7 @@ public class FirstLayerFragment extends LazyFragment {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onUserEvent(String event) {
         if ("act".equals(event)) {
-            ToastUtil.show(getActivity(), "收到Activity消息111");
+            ToastUtil.show(getActivity(), "收到Activity消息111aaa");
         }
     }
 
