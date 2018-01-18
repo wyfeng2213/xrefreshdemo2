@@ -24,7 +24,7 @@ import com.example.administrator.xrefreshviewdemo.mvp.mvp.ui.MvpActivity;
 import com.example.administrator.xrefreshviewdemo.ormlite.OrmLiteActivity;
 import com.example.administrator.xrefreshviewdemo.permission.PermissionTestActivity;
 import com.example.administrator.xrefreshviewdemo.photo.PhotoActivity;
-import com.example.administrator.xrefreshviewdemo.refresh.RefreshActivity;
+import com.example.administrator.xrefreshviewdemo.refresh.RefreshActivity2;
 import com.example.administrator.xrefreshviewdemo.searchview.SearchActivity;
 import com.example.administrator.xrefreshviewdemo.shape.ShapeActivity;
 import com.example.administrator.xrefreshviewdemo.supertext.SuperViewActivity;
@@ -161,7 +161,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         switch (v.getId()) {
             //下拉刷新
             case R.id.bt_refresh:
-                RefreshActivity.startActivity(this);
+                RefreshActivity2.startActivity(this);
                 break;
             //拍照和选择相册
             case R.id.bt_photo:
