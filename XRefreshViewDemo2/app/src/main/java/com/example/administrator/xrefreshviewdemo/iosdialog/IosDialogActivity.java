@@ -39,6 +39,7 @@ public class IosDialogActivity extends Activity implements OnClickListener {
     private OptionsPickerView pvWeightOptions;
     private Button btn8;
     private Button btn9;
+    private Button btn10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +77,8 @@ public class IosDialogActivity extends Activity implements OnClickListener {
         btn8.setOnClickListener(this);
         btn9 = (Button) findViewById(R.id.btn9);
         btn9.setOnClickListener(this);
+        btn10 = (Button) findViewById(R.id.btn10);
+        btn10.setOnClickListener(this);
     }
 
     @Override
@@ -212,6 +215,23 @@ public class IosDialogActivity extends Activity implements OnClickListener {
                 pvWeightOptions.show();
                 break;
             case R.id.btn9:
+                break;
+
+            case R.id.btn10:
+
+                android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this, R.style.AlertDialogStyle);
+                final android.support.v7.app.AlertDialog dialog = builder.create();
+                View view = View.inflate(this, R.layout.dialog_rule, null);
+                dialog.setView(view, 0, 0, 0, 0);// 设置边距为0,保证在2.x的版本上运行没问题
+                ImageView btCancel = (ImageView) view.findViewById(R.id.iv_cancel);
+                btCancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+
                 break;
         }
 
