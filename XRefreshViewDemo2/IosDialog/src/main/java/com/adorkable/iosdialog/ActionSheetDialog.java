@@ -2,7 +2,7 @@ package com.adorkable.iosdialog;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -30,6 +30,11 @@ public class ActionSheetDialog {
     private List<SheetItem> sheetItemList;
     private Display display;
 
+    /**
+     * 构造方法
+     *
+     * @param context
+     */
     public ActionSheetDialog(Context context) {
         this.context = context;
         WindowManager windowManager = (WindowManager) context
@@ -37,6 +42,11 @@ public class ActionSheetDialog {
         display = windowManager.getDefaultDisplay();
     }
 
+    /**
+     * build方法
+     *
+     * @return
+     */
     public ActionSheetDialog builder() {
         // 获取Dialog布局
         View view = LayoutInflater.from(context).inflate(
@@ -71,6 +81,12 @@ public class ActionSheetDialog {
         return this;
     }
 
+    /**
+     * 设置标题
+     *
+     * @param title
+     * @return
+     */
     public ActionSheetDialog setTitle(String title) {
         showTitle = true;
         txt_title.setVisibility(View.VISIBLE);
@@ -78,26 +94,40 @@ public class ActionSheetDialog {
         return this;
     }
 
+    /**
+     * 取消
+     *
+     * @param cancel
+     * @return
+     */
     public ActionSheetDialog setCancelable(boolean cancel) {
         dialog.setCancelable(cancel);
         return this;
     }
 
+    public ActionSheetDialog setCanceColor(int color) {
+        txt_cancel.setTextColor(ContextCompat.getColor(context, color));
+        return this;
+    }
+
+    /**
+     * 设置点击外面可以消失
+     *
+     * @param cancel
+     * @return
+     */
     public ActionSheetDialog setCanceledOnTouchOutside(boolean cancel) {
         dialog.setCanceledOnTouchOutside(cancel);
         return this;
     }
 
     /**
-     *
-     * @param strItem
-     *            条目名称
-     * @param color
-     *            条目字体颜色，设置null则默认蓝色
+     * @param strItem  条目名称
+     * @param color    条目字体颜色，设置null则默认蓝色
      * @param listener
      * @return
      */
-    public ActionSheetDialog addSheetItem(String strItem, SheetItemColor color,
+    public ActionSheetDialog addSheetItem(String strItem, int color,
                                           OnSheetItemClickListener listener) {
         if (sheetItemList == null) {
             sheetItemList = new ArrayList<SheetItem>();
@@ -106,7 +136,9 @@ public class ActionSheetDialog {
         return this;
     }
 
-    /** 设置条目布局 */
+    /**
+     * 设置条目布局
+     */
     private void setSheetItems() {
         if (sheetItemList == null || sheetItemList.size() <= 0) {
             return;
@@ -128,7 +160,7 @@ public class ActionSheetDialog {
             final int index = i;
             SheetItem sheetItem = sheetItemList.get(i - 1);
             String strItem = sheetItem.name;
-            SheetItemColor color = sheetItem.color;
+            int color = sheetItem.color;
             final OnSheetItemClickListener listener = (OnSheetItemClickListener) sheetItem.itemClickListener;
 
             TextView textView = new TextView(context);
@@ -162,13 +194,13 @@ public class ActionSheetDialog {
             }
 
             // 字体颜色
-            if (color == null) {
-                textView.setTextColor(Color.parseColor(SheetItemColor.Blue
-                        .getName()));
-            } else {
-                textView.setTextColor(Color.parseColor(color.getName()));
-            }
-
+//            if (color == null) {
+//                textView.setTextColor(Color.parseColor(SheetItemColor.Blue
+//                        .getName()));
+//            } else {
+//                textView.setTextColor(Color.parseColor(color.getName()));
+//            }
+            textView.setTextColor(ContextCompat.getColor(context, color));
             // 高度
             float scale = context.getResources().getDisplayMetrics().density;
             int height = (int) (45 * scale + 0.5f);
@@ -188,6 +220,9 @@ public class ActionSheetDialog {
         }
     }
 
+    /**
+     * 显示dialog
+     */
     public void show() {
         setSheetItems();
         dialog.show();
@@ -197,12 +232,15 @@ public class ActionSheetDialog {
         void onClick(int which);
     }
 
+    /**
+     * name显示的名称 ， 点击事件 ， 颜色
+     */
     public class SheetItem {
         String name;
         OnSheetItemClickListener itemClickListener;
-        SheetItemColor color;
+        int color;
 
-        public SheetItem(String name, SheetItemColor color,
+        public SheetItem(String name, int color,
                          OnSheetItemClickListener itemClickListener) {
             this.name = name;
             this.color = color;
@@ -210,21 +248,28 @@ public class ActionSheetDialog {
         }
     }
 
-    public enum SheetItemColor {
-        Blue("#037BFF"), Red("#FD4A2E");
-
-        private String name;
-
-        private SheetItemColor(String name) {
-            this.name = name;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-    }
+    /**
+     * 颜色的枚举
+     */
+//    public enum SheetItemColor {
+//        Blue("#037BFF"), Red("#FD4A2E");
+//
+//        private String name;
+//
+//        /**
+//         * 构造函数
+//         * @param name
+//         */
+//        private SheetItemColor(String name) {
+//            this.name = name;
+//        }
+//
+//        public String getName() {
+//            return name;
+//        }
+//
+//        public void setName(String name) {
+//            this.name = name;
+//        }
+//    }
 }

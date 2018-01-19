@@ -2,7 +2,7 @@ package com.adorkable.iosdialog;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.Color;
+import android.support.v4.content.ContextCompat;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +31,11 @@ public class AlertDialog {
     private boolean showPosBtn = false;
     private boolean showNegBtn = false;
 
+    /**
+     * 构造函数
+     *
+     * @param context
+     */
     public AlertDialog(Context context) {
         this.context = context;
         WindowManager windowManager = (WindowManager) context
@@ -38,6 +43,11 @@ public class AlertDialog {
         display = windowManager.getDefaultDisplay();
     }
 
+    /**
+     * builder方法
+     *
+     * @return
+     */
     public AlertDialog builder() {
         // 获取Dialog布局
         View view = LayoutInflater.from(context).inflate(
@@ -67,6 +77,12 @@ public class AlertDialog {
         return this;
     }
 
+    /**
+     * 设置标题
+     *
+     * @param title
+     * @return
+     */
     public AlertDialog setTitle(String title) {
         showTitle = true;
         if ("".equals(title)) {
@@ -77,6 +93,12 @@ public class AlertDialog {
         return this;
     }
 
+    /**
+     * 设置消息内容
+     *
+     * @param msg
+     * @return
+     */
     public AlertDialog setMsg(String msg) {
         showMsg = true;
         if ("".equals(msg)) {
@@ -87,11 +109,24 @@ public class AlertDialog {
         return this;
     }
 
+    /**
+     * 设置是否能够取消
+     *
+     * @param cancel
+     * @return
+     */
     public AlertDialog setCancelable(boolean cancel) {
         dialog.setCancelable(cancel);
         return this;
     }
 
+    /**
+     * 确定按钮没有设置颜色
+     *
+     * @param text
+     * @param listener
+     * @return
+     */
     public AlertDialog setPositiveButton(String text,
                                          final View.OnClickListener listener) {
         showPosBtn = true;
@@ -110,7 +145,15 @@ public class AlertDialog {
         return this;
     }
 
-    public AlertDialog setPositiveButton(String text, ActionSheetDialog.SheetItemColor color,
+    /**
+     * 确定按钮可以设置颜色
+     *
+     * @param text
+     * @param color
+     * @param listener
+     * @return
+     */
+    public AlertDialog setPositiveButton(String text, int color,
                                          final View.OnClickListener listener) {
         showPosBtn = true;
         if ("".equals(text)) {
@@ -118,13 +161,7 @@ public class AlertDialog {
         } else {
             btn_pos.setText(text);
         }
-        // 字体颜色
-        if (color == null) {
-            btn_pos.setTextColor(Color.parseColor(ActionSheetDialog.SheetItemColor.Blue
-                    .getName()));
-        } else {
-            btn_pos.setTextColor(Color.parseColor(color.getName()));
-        }
+        btn_pos.setTextColor(ContextCompat.getColor(context, color));
         btn_pos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,6 +172,40 @@ public class AlertDialog {
         return this;
     }
 
+    /**
+     * 取消按钮可以设置颜色
+     *
+     * @param text
+     * @param color
+     * @param listener
+     * @return
+     */
+    public AlertDialog setNegativeButton(String text, int color,
+                                         final View.OnClickListener listener) {
+        showNegBtn = true;
+        if ("".equals(text)) {
+            btn_neg.setText("取消");
+        } else {
+            btn_neg.setText(text);
+        }
+        btn_neg.setTextColor(ContextCompat.getColor(context, color));
+        btn_neg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onClick(v);
+                dialog.dismiss();
+            }
+        });
+        return this;
+    }
+
+    /**
+     * 取消按钮不设置颜色
+     *
+     * @param text
+     * @param listener
+     * @return
+     */
     public AlertDialog setNegativeButton(String text,
                                          final View.OnClickListener listener) {
         showNegBtn = true;
@@ -143,6 +214,7 @@ public class AlertDialog {
         } else {
             btn_neg.setText(text);
         }
+
         btn_neg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -153,31 +225,9 @@ public class AlertDialog {
         return this;
     }
 
-    public AlertDialog setNegativeButton(String text, ActionSheetDialog.SheetItemColor color,
-                                         final View.OnClickListener listener) {
-        showNegBtn = true;
-        if ("".equals(text)) {
-            btn_neg.setText("取消");
-        } else {
-            btn_neg.setText(text);
-        }
-        // 字体颜色
-        if (color == null) {
-            btn_neg.setTextColor(Color.parseColor(ActionSheetDialog.SheetItemColor.Blue
-                    .getName()));
-        } else {
-            btn_neg.setTextColor(Color.parseColor(color.getName()));
-        }
-        btn_neg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                listener.onClick(v);
-                dialog.dismiss();
-            }
-        });
-        return this;
-    }
-
+    /**
+     * 设置隐藏
+     */
     private void setLayout() {
         if (!showTitle && !showMsg) {
             txt_title.setText("提示");
@@ -223,6 +273,9 @@ public class AlertDialog {
         }
     }
 
+    /**
+     * 显示
+     */
     public void show() {
         setLayout();
         dialog.show();
