@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 import com.adorkable.iosdialog.ActionSheetDialog;
 import com.adorkable.iosdialog.ActionSheetDialog.OnSheetItemClickListener;
-import com.adorkable.iosdialog.ActionSheetDialog.SheetItemColor;
 import com.adorkable.iosdialog.AlertDialog;
 import com.bigkoo.pickerview.OptionsPickerView;
 import com.bigkoo.pickerview.TimePickerView;
@@ -88,7 +87,7 @@ public class IosDialogActivity extends Activity implements OnClickListener {
                         .setTitle("清空消息列表后，聊天记录依然保留，确定要清空消息列表？")
                         .setCancelable(false)
                         .setCanceledOnTouchOutside(false)
-                        .addSheetItem("清空消息列表", SheetItemColor.Red,
+                        .addSheetItem("清空消息列表", R.color.red,
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
@@ -100,43 +99,30 @@ public class IosDialogActivity extends Activity implements OnClickListener {
                 new ActionSheetDialog(IosDialogActivity.this)
                         .builder()
                         .setCancelable(false)
+                        .setCanceColor(R.color.red)
                         .setCanceledOnTouchOutside(false)
-                        .addSheetItem("发送给好友", SheetItemColor.Blue,
+                        .addSheetItem("发送给好友", R.color.deepblue,
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
 
                                     }
                                 })
-                        .addSheetItem("转载到空间相册", SheetItemColor.Blue,
+                        .addSheetItem("转载到空间相册", R.color.deepblue,
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
 
                                     }
                                 })
-                        .addSheetItem("上传到群相册", SheetItemColor.Blue,
+                        .addSheetItem("上传到群相册", R.color.deepblue,
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
 
                                     }
                                 })
-                        .addSheetItem("保存到手机", SheetItemColor.Blue,
-                                new OnSheetItemClickListener() {
-                                    @Override
-                                    public void onClick(int which) {
-
-                                    }
-                                })
-                        .addSheetItem("收藏", SheetItemColor.Blue,
-                                new OnSheetItemClickListener() {
-                                    @Override
-                                    public void onClick(int which) {
-
-                                    }
-                                })
-                        .addSheetItem("查看聊天图片", SheetItemColor.Blue,
+                        .addSheetItem("保存到手机", R.color.deepblue,
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
@@ -149,8 +135,9 @@ public class IosDialogActivity extends Activity implements OnClickListener {
                         .builder()
                         .setTitle("请选择操作")
                         .setCancelable(false)
+                        .setCanceColor(R.color.red)
                         .setCanceledOnTouchOutside(false)
-                        .addSheetItem("条目一", SheetItemColor.Blue,
+                        .addSheetItem("条目一", R.color.deepblue,
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
@@ -159,7 +146,7 @@ public class IosDialogActivity extends Activity implements OnClickListener {
                                                 .show();
                                     }
                                 })
-                        .addSheetItem("条目二", SheetItemColor.Blue,
+                        .addSheetItem("条目二", R.color.deepblue,
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
@@ -168,7 +155,7 @@ public class IosDialogActivity extends Activity implements OnClickListener {
                                                 .show();
                                     }
                                 })
-                        .addSheetItem("条目三", SheetItemColor.Blue,
+                        .addSheetItem("条目三", R.color.deepblue,
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
@@ -177,61 +164,7 @@ public class IosDialogActivity extends Activity implements OnClickListener {
                                                 .show();
                                     }
                                 })
-                        .addSheetItem("条目四", SheetItemColor.Blue,
-                                new OnSheetItemClickListener() {
-                                    @Override
-                                    public void onClick(int which) {
-                                        Toast.makeText(IosDialogActivity.this,
-                                                "item" + which, Toast.LENGTH_SHORT)
-                                                .show();
-                                    }
-                                })
-                        .addSheetItem("条目五", SheetItemColor.Blue,
-                                new OnSheetItemClickListener() {
-                                    @Override
-                                    public void onClick(int which) {
-                                        Toast.makeText(IosDialogActivity.this,
-                                                "item" + which, Toast.LENGTH_SHORT)
-                                                .show();
-                                    }
-                                })
-                        .addSheetItem("条目六", SheetItemColor.Blue,
-                                new OnSheetItemClickListener() {
-                                    @Override
-                                    public void onClick(int which) {
-                                        Toast.makeText(IosDialogActivity.this,
-                                                "item" + which, Toast.LENGTH_SHORT)
-                                                .show();
-                                    }
-                                })
-                        .addSheetItem("条目七", SheetItemColor.Blue,
-                                new OnSheetItemClickListener() {
-                                    @Override
-                                    public void onClick(int which) {
-                                        Toast.makeText(IosDialogActivity.this,
-                                                "item" + which, Toast.LENGTH_SHORT)
-                                                .show();
-                                    }
-                                })
-                        .addSheetItem("条目八", SheetItemColor.Blue,
-                                new OnSheetItemClickListener() {
-                                    @Override
-                                    public void onClick(int which) {
-                                        Toast.makeText(IosDialogActivity.this,
-                                                "item" + which, Toast.LENGTH_SHORT)
-                                                .show();
-                                    }
-                                })
-                        .addSheetItem("条目九", SheetItemColor.Blue,
-                                new OnSheetItemClickListener() {
-                                    @Override
-                                    public void onClick(int which) {
-                                        Toast.makeText(IosDialogActivity.this,
-                                                "item" + which, Toast.LENGTH_SHORT)
-                                                .show();
-                                    }
-                                })
-                        .addSheetItem("条目十", SheetItemColor.Blue,
+                        .addSheetItem("条目四", R.color.deepblue,
                                 new OnSheetItemClickListener() {
                                     @Override
                                     public void onClick(int which) {
@@ -242,24 +175,27 @@ public class IosDialogActivity extends Activity implements OnClickListener {
                                 }).show();
                 break;
             case R.id.btn4:
+
                 new AlertDialog(IosDialogActivity.this).builder().setTitle("退出当前账号")
                         .setMsg("再连续登陆15天，就可变身为QQ达人。退出QQ可能会使你现有记录归零，确定退出？")
-                        .setPositiveButton("确认退出", SheetItemColor.Red, new OnClickListener() {
+                        .setPositiveButton("确认退出", R.color.red, new OnClickListener() {
                             @Override
                             public void onClick(View v) {
 
                             }
-                        }).setNegativeButton("取消", new OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
+                        })
+                        .setNegativeButton("取消", R.color.black, new OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
 
-                    }
-                }).show();
+                            }
+                        }).show();
                 break;
             case R.id.btn5:
+
                 new AlertDialog(IosDialogActivity.this).builder()
                         .setMsg("你现在无法接收到新消息提醒。请到系统-设置-通知中开启消息提醒")
-                        .setNegativeButton("确定", new OnClickListener() {
+                        .setNegativeButton("确定", R.color.black, new OnClickListener() {
                             @Override
                             public void onClick(View v) {
 
