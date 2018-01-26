@@ -35,6 +35,7 @@ import com.example.administrator.xrefreshviewdemo.tab.ScrollTabActivity;
 import com.example.administrator.xrefreshviewdemo.tab.ViewPageScrollActivity;
 import com.example.administrator.xrefreshviewdemo.text.TextActivity;
 import com.example.administrator.xrefreshviewdemo.toolbar.ToolBarTestActivty2;
+import com.example.administrator.xrefreshviewdemo.web.MyWebViewActivity;
 import com.example.administrator.xrefreshviewdemo.wheelview.WheelActivity;
 import com.example.administrator.xrefreshviewdemo.zbar.ZbarActivity;
 import com.example.administrator.xrefreshviewdemo.zxing.ZXingCreatePicActivity;
@@ -77,6 +78,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private Button bt_text;
     private Button bt_chenjin;
     private Button bt_viewpage_scroll;
+    private Button bt_webview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -154,6 +156,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         bt_chenjin.setOnClickListener(this);
         bt_viewpage_scroll = (Button) findViewById(R.id.bt_viewpage_scroll);
         bt_viewpage_scroll.setOnClickListener(this);
+        bt_webview = (Button) findViewById(R.id.bt_webview);
+        bt_webview.setOnClickListener(this);
     }
 
     @Override
@@ -289,6 +293,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 ChenjinActivity.startActivity(this);
                 break;
 
+            case R.id.bt_webview:
+                String url = "http://m.youku.com/video/id_XODEzMjU1MTI4.html";
+                String title = "测试webview";
+                MyWebViewActivity.startActivity(this, url, title);
+                break;
         }
     }
 }

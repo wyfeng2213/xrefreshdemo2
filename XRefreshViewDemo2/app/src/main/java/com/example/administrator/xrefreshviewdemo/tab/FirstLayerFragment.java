@@ -65,7 +65,6 @@ public class FirstLayerFragment extends LazyFragment {
         Log.d("cccc", "Fragment 将要创建View " + this);
 
         EventBus.getDefault().register(this);
-
         EventBus.getDefault().post("fragment");
 
     }
