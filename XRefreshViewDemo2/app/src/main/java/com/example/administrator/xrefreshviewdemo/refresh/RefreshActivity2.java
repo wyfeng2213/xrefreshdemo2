@@ -23,7 +23,8 @@ public class RefreshActivity2 extends AppCompatActivity {
     private ListView listview;
     private SmartRefreshLayout refreshLayout;
     List<String> mDatas = new ArrayList<>();
-
+    int count = 0;
+    CommonAdapter<String> adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,8 +73,8 @@ public class RefreshActivity2 extends AppCompatActivity {
         refreshLayout.autoRefresh();
     }
 
-    CommonAdapter<String> adapter;
-    int count = 0;
+
+
 
     public void initData() {
         count = 0;

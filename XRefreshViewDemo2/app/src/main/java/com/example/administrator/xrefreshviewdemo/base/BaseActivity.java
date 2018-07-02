@@ -6,11 +6,16 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.Window;
 
-import com.example.administrator.xrefreshviewdemo.application.MyApplication;
+import com.example.administrator.xrefreshviewdemo.eventbus.Event;
+import com.example.administrator.xrefreshviewdemo.eventbus.EventBusUtil;
 
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import butterknife.ButterKnife;
 
 public abstract class BaseActivity extends Activity {
-    private static String TAG;
+    public static String TAG;
     public Context mContext;
 
     @Override
@@ -19,7 +24,47 @@ public abstract class BaseActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         mContext = this;
         TAG = this.getClass().getSimpleName();
-        MyApplication.getInstance().addActivity(this);
+//        MyApplication.getInstance().addActivity(this);
+        initContentView(savedInstanceState);
+        ButterKnife.bind(this);
+        initView();
+        initData();
+        if (isRegisterEventBus()) {
+            EventBusUtil.register(this);
+        }
+    }
+
+    /**
+     * 是否注册事件分发
+     *
+     * @return true绑定EventBus事件分发，默认不绑定，子类需要绑定的话复写此方法返回true.
+     */
+    protected boolean isRegisterEventBus() {
+        return false;
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventBusCome(Event event) {
+        if (event != null) {
+            receiveEvent(event);
+        }
+    }
+
+    /**
+     * 接收到分发到事件
+     *
+     * @param event 事件
+     */
+    protected void receiveEvent(Event event) {
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if (isRegisterEventBus()) {
+            EventBusUtil.unregister(this);
+        }
     }
 
     @Override
@@ -33,6 +78,14 @@ public abstract class BaseActivity extends Activity {
         super.onResume();
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    abstract protected void initContentView(Bundle var1);
+
+
     /**
      * 初始化事件
      */
@@ -43,9 +96,4 @@ public abstract class BaseActivity extends Activity {
      */
     public abstract void initData();
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        MyApplication.getInstance().removeActivity(this);
-    }
 }
